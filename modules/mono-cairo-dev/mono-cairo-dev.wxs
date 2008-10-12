@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Module Id="mono_cairo_dev" Language="1033" Version="1.0.5000.0">
+    <Package Id="13a5df16-0b2b-11dd-9af8-001a6bce76fb" InstallerVersion="200" Manufacturer="Mono Project"/>
+
+    <!-- Detect Visual Studio 2003/2008 -->
+    <Property Id="VS2003INSTALLED">
+      <RegistrySearch Id="VS2008RegistrySearch" Root="HKLM" Type="raw"
+                      Key="SOFTWARE\Microsoft\VisualStudio\7.1\Projects\{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}"
+                      Name="ProjectTemplatesDir" />
+    </Property>
+
+    <Property Id="VS2008INSTALLED">
+      <RegistrySearch Id="VS2003RegistrySearch" Root="HKLM" Type="raw"
+                      Key="SOFTWARE\Microsoft\VisualStudio\SxS\VS7\8.0" />
+    </Property>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+
+        <!-- Install Assembly references into Visual Studio 2003 -->
+        <Component Id="vs2003_references" Guid="19c222ba-0b2b-11dd-9af8-001a6bce76fb">
+          <!-- If the condition is true, install component -->
+
+          <!-- Install if Visual Studio 2003 is installed -->
+          <!-- (Un)install if already installed
+               (catches the case where Visual Studio was uninstalled first) -->
+          <Condition><![CDATA[VS2003INSTALLED <> "" OR Installed]]></Condition>
+
+          <RegistryKey Root="HKLM" Action="createAndRemoveOnUninstall"
+                       Key="SOFTWARE\Microsoft\VisualStudio\7.1\AssemblyFolders\Mono.Cairo">
+            <RegistryValue Type="string" Value="[MergeRedirectFolder]lib\Mono.Cairo\" />
+          </RegistryKey>
+        </Component>
+    
+        <!-- Install Assembly references into Visual Studio 2008 -->
+        <Component Id="vs2008_references" Guid="21069696-0b2b-11dd-9af8-001a6bce76fb">
+          <!-- If the condition is true, install component -->
+
+          <!-- Install if Visual Studio 2008 is installed -->
+          <!-- (Un)install if already installed
+               (catches the case where Visual Studio was uninstalled first) -->
+          <Condition><![CDATA[VS2008INSTALLED <> "" OR Installed]]></Condition>
+
+          <RegistryKey Root="HKLM" Action="createAndRemoveOnUninstall"
+                       Key="SOFTWARE\Microsoft\.NETFramework\v2.0.50727\AssemblyFoldersEx\Mono.Cairo">
+            <RegistryValue Type="string" Value="[MergeRedirectFolder]lib\Mono.Cairo\" />
+          </RegistryKey>
+        </Component>
+
+      </Directory>
+    </Directory>
+  </Module>
+</Wix>

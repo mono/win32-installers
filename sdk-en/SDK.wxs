@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="242861f0-0a5f-11dd-9af8-001a6bce76fb" Name="Gtk# 2.10 SDK" Language="1033"
+           Version="2.10.4" Manufacturer="Medsphere Systems Corporation"
+           UpgradeCode="2b6eb89c-0a5f-11dd-9af8-001a6bce76fb">
+    <Package InstallerVersion="200" Compressed="yes"
+             Description="Gtk# 2.10 Software Development Kit Installer"
+             Comments="Provides Gtk# 2.10 and Gtk+ 2.12" />
+    <Media Id="1" Cabinet="WixProject1.cab" EmbedCab="yes" />
+
+    <Condition Message="This setup requires the .NET Framework 1.1 or higher.">
+      <![CDATA[MsiNetAssemblySupport >= "1.1.4322"]]>
+    </Condition>
+
+    <!-- Install Start Menu shortcut for all users -->
+    <Property Id="ALLUSERS"><![CDATA[2]]></Property>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder" Name="PFiles">
+        <Directory Id="Medsphere" Name="Medsphere">
+          <Directory Id="INSTALLLOCATION" Name="Gtk# SDK">
+
+	    <Merge Id="gtk_-2_0-lib" Language="1033" SourceFile="../modules/gtk+-2.0-lib/gtk+-2.0-lib.msm" DiskId="1" />
+	    <Merge Id="gtk_-2_0-dev" Language="1033" SourceFile="../modules/gtk+-2.0-dev/gtk+-2.0-dev.msm" DiskId="1" />
+	    <Merge Id="glade-2-lib" Language="1033" SourceFile="../modules/glade-2-lib/glade-2-lib.msm" DiskId="1" />
+	    <Merge Id="glade-2-dev" Language="1033" SourceFile="../modules/glade-2-dev/glade-2-dev.msm" DiskId="1" />
+	    <Merge Id="gtk-sharp-2_0-lib" Language="1033" SourceFile="../modules/gtk-sharp-2.0-lib/gtk-sharp-2.0-lib.msm" DiskId="1" />
+	    <Merge Id="gtk-sharp-2_0-dev" Language="1033" SourceFile="../modules/gtk-sharp-2.0-dev/gtk-sharp-2.0-dev.msm" DiskId="1" />
+	    <Merge Id="mono-cairo-lib" Language="1033" SourceFile="../modules/mono-cairo-lib/mono-cairo-lib.msm" DiskId="1" />
+	    <Merge Id="mono-cairo-dev" Language="1033" SourceFile="../modules/mono-cairo-dev/mono-cairo-dev.msm" DiskId="1" />
+	    <Merge Id="poppler-lib" Language="1033" SourceFile="../modules/poppler-lib/poppler-lib.msm" DiskId="1" />
+	    <Merge Id="aspell-lib" Language="1033" SourceFile="../modules/aspell-lib/aspell-lib.msm" DiskId="1" />
+	    <Merge Id="vte-lib" Language="1033" SourceFile="../modules/vte-lib/vte-lib.msm" DiskId="1" />
+	    <Merge Id="vte-sharp-lib" Language="1033" SourceFile="../modules/vte-sharp-lib/vte-sharp-lib.msm" DiskId="1" />
+	    <Merge Id="vte-sharp-dev" Language="1033" SourceFile="../modules/vte-sharp-dev/vte-sharp-dev.msm" DiskId="1" />
+
+            <Component Id="urls" Guid="90545dbe-108d-11dd-9af8-001a6bce76fb">
+              <IniFile Id="GtkPlus" Action="addLine" Name="GtkPlus.url"
+                       Directory="INSTALLLOCATION" Section="InternetShortcut"
+                       Key="URL" Value="http://www.gtk.org" />
+              <IniFile Id="GtkSharp" Action="addLine" Name="GtkSharp.url"
+                       Directory="INSTALLLOCATION" Section="InternetShortcut"
+                       Key="URL" Value="http://www.mono-project.com/GtkSharp" />
+              <IniFile Id="MonoDocWeb" Action="addLine" Name="MonoDocWeb.url"
+                       Directory="INSTALLLOCATION" Section="InternetShortcut"
+                       Key="URL" Value="http://www.go-mono.org/docs" />
+              <CreateFolder />
+            </Component>
+
+          </Directory>
+        </Directory>
+      </Directory>
+      
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="Gtk# SDK">
+
+          <!-- See http://robmensching.com/blog/archive/2007/04/27/How-to-create-an-uninstall-shortcut-and-pass-all-the.aspx -->
+          <Component Id="shortcuts" Guid="401f2594-108e-11dd-9af8-001a6bce76fb">
+            <!-- Make ICE18, ICE38 and ICE48 happy -->
+            <RegistryKey Root="HKCU" Key="Software\Gtk# SDK\Version">
+              <RegistryValue Value="[ProductVersion]" Type="string" KeyPath="yes" />
+            </RegistryKey>
+
+            <Shortcut Id="gtkplusshortcut" Name="About GTK+"
+                      Directory="ProgramMenuDir" Target="[INSTALLLOCATION]GtkPlus.url" />
+
+            <Shortcut Id="gtksharpshortcut" Name="About Gtk#"
+                      Directory="ProgramMenuDir" Target="[INSTALLLOCATION]GtkSharp.url" />
+
+            <Shortcut Id="monodocshortcut" Name="Mono Documentation on the Web"
+                      Directory="ProgramMenuDir" Target="[INSTALLLOCATION]MonoDocWeb.url" />
+
+            <Shortcut Id="gtkdemoshortcut" Name="Gtk+ Demo"
+                      Directory="ProgramMenuDir" Target="[INSTALLLOCATION]bin\gtk-demo.exe" />
+
+            <Shortcut Id="gladeshortcut" Name="Glade"
+                      Directory="ProgramMenuDir" Target="[INSTALLLOCATION]bin\glade-2.exe" />
+
+            <Shortcut Id="uninstall" Name="Uninstall Gtk# SDK"
+                      Directory="ProgramMenuDir"
+                      Target="[System64Folder]msiexec.exe"
+                      Arguments="/x [ProductCode]"
+                      WorkingDirectory="INSTALLLOCATION" />
+
+            <!-- Make ICE64 happy -->
+            <RemoveFolder Id="RemoveShortcutFolder" On="uninstall" />
+          </Component>
+
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Default" Title="Default" Level="1">
+      <MergeRef Id="gtk_-2_0-lib" />
+      <MergeRef Id="gtk_-2_0-dev" />
+      <MergeRef Id="glade-2-lib" />
+      <MergeRef Id="glade-2-dev" />
+      <MergeRef Id="gtk-sharp-2_0-lib" />
+      <MergeRef Id="gtk-sharp-2_0-dev" />
+      <MergeRef Id="mono-cairo-lib" />
+      <MergeRef Id="mono-cairo-dev" />
+      <MergeRef Id="poppler-lib" />
+      <MergeRef Id="aspell-lib" />
+      <MergeRef Id="vte-lib" />
+      <MergeRef Id="vte-sharp-lib" />
+      <MergeRef Id="vte-sharp-dev" />
+      <ComponentRef Id="urls" />
+      <ComponentRef Id="shortcuts" />
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_InstallDir" />
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+  </Product>
+</Wix>

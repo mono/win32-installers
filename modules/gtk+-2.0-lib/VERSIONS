@@ -1,0 +1,16 @@
+Atk		1.22.0
+Cairo		1.5.20
+Fontconfig	2.2.2
+FreeType2	9.16.3
+Gdk		2.12.10
+libgdk-win32	gtk-2-12 branch, r20806
+GdkPixbuf	2.12.10
+GIO		2.16.3
+GLib		2.16.3
+GTK+		2.12.10
+GtkSpell	2.0.11
+libpng		1.2.10
+librsvg		2.22.2
+libxml		2.6.31
+Pango		1.20.2
+pixman		0.10.0

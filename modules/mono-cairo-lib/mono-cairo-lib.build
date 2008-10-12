@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<project name="mono-cairo-lib" default="build">
+  <include buildfile="../../build/module.include" />
+</project>

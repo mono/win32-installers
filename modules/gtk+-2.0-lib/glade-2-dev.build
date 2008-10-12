@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<project name="gtk+-2.0-lib" default="build">
+  <include buildfile="../../build/module.include" />
+</project>

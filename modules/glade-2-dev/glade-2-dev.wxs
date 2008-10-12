@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Module Id="glade_2_dev" Language="1033" Version="2.12.1">
+    <Package Id="77fe713e-109f-11dd-9af8-001a6bce76fb" InstallerVersion="200" Manufacturer="Glade Project"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+
+        <Directory Id="bin" Name="bin">
+          <Component Id="binaries" Guid="8a33557c-109f-11dd-9af8-001a6bce76fb">
+            <File Id="glade_2.exe" Name="glade-2.exe" Source="source\bin\glade-2.exe" Vital="yes"/>
+            <File Id="gladeloader.exe" Name="gladeloader.exe" Source="source\bin\gladeloader.exe" Vital="yes"/>
+          </Component>
+        </Directory>
+
+      </Directory>
+    </Directory>
+  </Module>
+</Wix>
+

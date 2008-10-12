@@ -1,0 +1,40 @@
+General Information
+===================
+
+This package provides merge modules and installers for Gtk# on Windows.
+Runtime installers provide the GTK+ base, and will install Gtk# into the
+Microsoft .NET GAC.  SDK installers provide the Runtime sources, development
+files (like headers and pc files) for GTK+ and also integrate loosely with
+Visual Studio 2003 and Visual Studio 2005.
+
+Requirements
+============
+
+ * Wix 3.0.3725.0 or greater installed, and the location of the "bin" folder in 
+   your PATH.
+
+ * NAnt 0.85 or greater installed, and the location of the "bin" folder in your
+   PATH.
+
+Building Merge Modules
+======================
+
+To build individual merge modules, open the Command Line (Start -> Run ->
+"cmd") and change directory into the module you want to build.  Run "nant" to
+build the module.
+
+Individual merge modules can be merged into other MSI-based installers to
+provide Gtk+ and friends.  One huge caveat though, if a user tries to install
+more than one installer that provide different GTK+ versions and set the PATH
+enviroment variable, the installed Gtk+ versions will likely conflict in
+unpredicatble ways.  Your mileage may vary.
+
+As a convention, the -dev modules require the -lib modules to be installed and
+merged.
+
+Building Installers
+===================
+
+First, make sure all modules that are required for this installer are built.  Or, build all the modules to be sure.
+
+Then in the Command Line, change directory to where the installer files are and run "nant" to build.

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Module Id="vte_sharp_lib" Language="1033" Version="2.8.3">
+    <Package Id="822e370a-0755-11dd-b9fa-001a6bce76fb" Manufacturer="Mono Project"
+             InstallerVersion="200"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+
+        <Directory Id="bin" Name="bin">
+          <Component Id="vtesharp_glue" Guid="9D48A464-999A-44e1-A0FC-076AFC5B61EE">
+            <File Id="vtesharpglue" Name="vtesharpglue-2.dll"
+                  Source="source\bin\vtesharpglue-2.dll" KeyPath="yes" Vital="yes" />
+          </Component>
+        </Directory>
+
+        <Directory Id="lib" Name="lib">
+          <!-- The following is not a real directory - it is created only for
+	       the purposes of GACing assemblies, and will never be created on
+               a host system -->
+          <Directory Id="GAC">
+
+            <Component Id="vtesharp_dll" Guid="9bbcf672-3188-11dd-9af8-001a6bce76fb">
+              <File Id="vtesharpdll" Name="vte-sharp.dll" Assembly=".net" KeyPath="yes"
+                    Source="source\lib\gtk-sharp-2.0\vte\vte-sharp.dll" Vital="yes" />
+            </Component>
+
+            <Component Id="vtesharp_policy.2.6" Guid="68E2449A-815C-4f89-A3E9-7426FC051CFE">
+              <File Id="policy.2.6.vtesharp.dll" Name="policy.2.6.vte-sharp.dll" Assembly=".net" 
+                    KeyPath="yes" Source="source\lib\gtk-sharp-2.0\vte\policy.2.6.vte-sharp.dll"
+                    Vital="no" />
+
+              <File Id="policy.2.6.vtesharp.config" Name="policy.2.6.config" 
+                    CompanionFile="policy.2.6.vtesharp.dll" 
+                    Source="source\lib\gtk-sharp-2.0\vte\policy.2.6.config" Vital="no" />
+              </Component>
+              
+          </Directory>
+
+          <!-- Specifying Assembly=".net" causes the dll to be GACed but the
+	       file is never installed, so we must specify it again.  See
+               http://blogs.msdn.com/astebner/archive/2007/06/21/3450539.aspx -->
+          <Directory Id="gtksharp2.0" Name="gtk-sharp-2.0">
+
+            <Directory Id="vte" Name="vte">
+
+              <Component Id="vtesharp_dll_inst" Guid="4BB46ADE-FDED-4c0b-BC89-E013D8FC7CF7">
+                <File Id="vtesharpdll_inst" Name="vte-sharp.dll" KeyPath="yes"
+                      Source="source\lib\gtk-sharp-2.0\vte\vte-sharp.dll" Vital="yes" />
+              </Component>
+
+            </Directory>
+            
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+      
+  </Module>
+</Wix>

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Module Id="vte_sharp_dev" Language="1033" Version="2.8.3">
+    <Package Id="7dd10f7c-0b1d-11dd-9af8-001a6bce76fb" InstallerVersion="200" Manufacturer="Mono Project"/>
+
+    <!-- Detect Visual Studio 2003/2008 -->
+    <Property Id="VS2003INSTALLED">
+      <RegistrySearch Id="VS2008RegistrySearch" Root="HKLM" Type="raw"
+                      Key="SOFTWARE\Microsoft\VisualStudio\7.1\Projects\{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}"
+                      Name="ProjectTemplatesDir" />
+    </Property>
+
+    <Property Id="VS2008INSTALLED">
+      <RegistrySearch Id="VS2003RegistrySearch" Root="HKLM" Type="raw"
+                      Key="SOFTWARE\Microsoft\VisualStudio\SxS\VS7\8.0" />
+    </Property>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+
+        <!-- Install Assembly references into Visual Studio 2003 -->
+        <Component Id="vs2003_references" Guid="988eebfe-0b1d-11dd-9af8-001a6bce76fb">
+          <!-- If the condition is true, install component -->
+
+          <!-- Install if Visual Studio 2003 is installed -->
+          <!-- (Un)install if already installed
+               (catches the case where Visual Studio was uninstalled first) -->
+          <Condition><![CDATA[VS2003INSTALLED <> "" OR Installed]]></Condition>
+
+          <RegistryKey Root="HKLM" Action="createAndRemoveOnUninstall"
+                       Key="SOFTWARE\Microsoft\VisualStudio\7.1\AssemblyFolders\vte-sharp">
+            <RegistryValue Type="string" Value="[MergeRedirectFolder]lib\gtk-sharp-2.0\vte" />
+          </RegistryKey>
+        </Component>
+    
+        <!-- Install Assembly references into Visual Studio 2008 -->
+        <Component Id="vs2008_references" Guid="9bbbf2c2-0b1d-11dd-9af8-001a6bce76fb">
+          <!-- If the condition is true, install component -->
+
+          <!-- Install if Visual Studio 2008 is installed -->
+          <!-- (Un)install if already installed
+               (catches the case where Visual Studio was uninstalled first) -->
+          <Condition><![CDATA[VS2008INSTALLED <> "" OR Installed]]></Condition>
+
+          <RegistryKey Root="HKLM" Action="createAndRemoveOnUninstall"
+                       Key="SOFTWARE\Microsoft\.NETFramework\v2.0.50727\AssemblyFoldersEx\vte-sharp">
+            <RegistryValue Type="string" Value="[MergeRedirectFolder]lib\gtk-sharp-2.0\vte" />
+          </RegistryKey>
+        </Component>
+
+      </Directory>
+    </Directory>
+  </Module>
+</Wix>

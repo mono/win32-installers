@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>AtkRelation</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="ATK - Accessibility Toolkit">
+<link rel="up" href="atk.html" title="ATK Library">
+<link rel="prev" href="AtkRegistry.html" title="AtkRegistry">
+<link rel="next" href="AtkRelationSet.html" title="AtkRelationSet">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="atk.html" title="ATK Library">
+<link rel="index" href="ix01.html" title="Index">
+<link rel="index" href="ix02.html" title="Index of deprecated symbols">
+<link rel="index" href="ix03.html" title="Index of new symbols in ATK 1.3">
+<link rel="index" href="ix04.html" title="Index of new symbols in ATK 1.4">
+<link rel="index" href="ix05.html" title="Index of new symbols in ATK 1.6">
+<link rel="index" href="ix06.html" title="Index of new symbols in ATK 1.9">
+<link rel="index" href="ix07.html" title="Index of new symbols in ATK 1.12">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="AtkRegistry.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="atk.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">ATK - Accessibility Toolkit</th>
+<td><a accesskey="n" href="AtkRelationSet.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2617632" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2617922" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2617846" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2617871" class="shortcut">Properties</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="AtkRelation"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2617632"></a><span class="refentrytitle">AtkRelation</span>
+</h2>
+<p>AtkRelation &#8212; An object used to describe a relation between a object and one or more
+other objects.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+                    <a class="link" href="AtkRelation.html#AtkRelation-struct">AtkRelation</a>;
+enum                <a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>;
+<a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>     <a class="link" href="AtkRelation.html#atk-relation-type-register">atk_relation_type_register</a>          (const gchar *name);
+const gchar*        <a class="link" href="AtkRelation.html#atk-relation-type-get-name">atk_relation_type_get_name</a>          (<a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a> type);
+<a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>     <a class="link" href="AtkRelation.html#atk-relation-type-for-name">atk_relation_type_for_name</a>          (const gchar *name);
+<a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a>*        <a class="link" href="AtkRelation.html#atk-relation-new">atk_relation_new</a>                    (<a class="link" href="AtkObject.html" title="AtkObject">AtkObject</a> **targets,
+                                                         gint n_targets,
+                                                         <a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a> relationship);
+<a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>     <a class="link" href="AtkRelation.html#atk-relation-get-relation-type">atk_relation_get_relation_type</a>      (<a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a> *relation);
+GPtrArray*          <a class="link" href="AtkRelation.html#atk-relation-get-target">atk_relation_get_target</a>             (<a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a> *relation);
+void                <a class="link" href="AtkRelation.html#atk-relation-add-target">atk_relation_add_target</a>             (<a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a> *relation,
+                                                         <a class="link" href="AtkObject.html" title="AtkObject">AtkObject</a> *target);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2617846"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----AtkRelation
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2617871"></a><h2>Properties</h2>
+<pre class="synopsis">
+
+  "<a class="link" href="AtkRelation.html#AtkRelation--relation-type">relation-type</a>"            <a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>       : Read / Write
+  "<a class="link" href="AtkRelation.html#AtkRelation--target">target</a>"                   GValueArray           : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2617922"></a><h2>Description</h2>
+<p>
+An AtkRelation describes a relation between an object and one or more
+other objects. The actual relations that an object has with other objects
+are defined as an AtkRelationSet, which is a set of AtkRelations.
+
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2617941"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2617951"></a><h3>
+<a name="AtkRelation-struct"></a>AtkRelation</h3>
+<a class="indexterm" name="id2617964"></a><pre class="programlisting">typedef struct _AtkRelation AtkRelation;</pre>
+<p>
+The AtkRelation structure should not be accessed directly.
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2617980"></a><h3>
+<a name="AtkRelationType"></a>enum AtkRelationType</h3>
+<a class="indexterm" name="id2617994"></a><pre class="programlisting">typedef enum
+{
+  ATK_RELATION_NULL = 0,
+  ATK_RELATION_CONTROLLED_BY,
+  ATK_RELATION_CONTROLLER_FOR,
+  ATK_RELATION_LABEL_FOR,
+  ATK_RELATION_LABELLED_BY,
+  ATK_RELATION_MEMBER_OF,
+  ATK_RELATION_NODE_CHILD_OF,
+  ATK_RELATION_FLOWS_TO,
+  ATK_RELATION_FLOWS_FROM,
+  ATK_RELATION_SUBWINDOW_OF, 
+  ATK_RELATION_EMBEDS, 
+  ATK_RELATION_EMBEDDED_BY, 
+  ATK_RELATION_POPUP_FOR, 
+  ATK_RELATION_PARENT_WINDOW_OF, 
+  ATK_RELATION_DESCRIBED_BY,
+  ATK_RELATION_DESCRIPTION_FOR,
+  ATK_RELATION_LAST_DEFINED
+} AtkRelationType;
+</pre>
+<p>
+Describes the type of the relation</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-NULL:CAPS"></a><code class="literal">ATK_RELATION_NULL</code></span></p></td>
+<td> Not used, represens "no relationship" or an error condition.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-CONTROLLED-BY:CAPS"></a><code class="literal">ATK_RELATION_CONTROLLED_BY</code></span></p></td>
+<td> Indicates an object controlled by one or more target objects.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-CONTROLLER-FOR:CAPS"></a><code class="literal">ATK_RELATION_CONTROLLER_FOR</code></span></p></td>
+<td> Indicates an object is an controller for one or more target objects.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-LABEL-FOR:CAPS"></a><code class="literal">ATK_RELATION_LABEL_FOR</code></span></p></td>
+<td> Indicates an object is a label for one or more target objects.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-LABELLED-BY:CAPS"></a><code class="literal">ATK_RELATION_LABELLED_BY</code></span></p></td>
+<td> Indicates an object is labelled by one or more target objects.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-MEMBER-OF:CAPS"></a><code class="literal">ATK_RELATION_MEMBER_OF</code></span></p></td>
+<td> Indicates an object is a member of a group of one or more target objects.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-NODE-CHILD-OF:CAPS"></a><code class="literal">ATK_RELATION_NODE_CHILD_OF</code></span></p></td>
+<td> Indicates an object is a cell in a treetable which is displayed because a cell in the same column is expanded and identifies that cell.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-FLOWS-TO:CAPS"></a><code class="literal">ATK_RELATION_FLOWS_TO</code></span></p></td>
+<td> Indicates that the object has content that flows logically to another
+ AtkObject in a sequential way, (for instance text-flow).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-FLOWS-FROM:CAPS"></a><code class="literal">ATK_RELATION_FLOWS_FROM</code></span></p></td>
+<td> Indicates that the object has content that flows logically from
+ another AtkObject in a sequential way, (for instance text-flow).
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-SUBWINDOW-OF:CAPS"></a><code class="literal">ATK_RELATION_SUBWINDOW_OF</code></span></p></td>
+<td> Indicates a subwindow attached to a component but otherwise has no connection in  the UI heirarchy to that component.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-EMBEDS:CAPS"></a><code class="literal">ATK_RELATION_EMBEDS</code></span></p></td>
+<td> Indicates that the object visually embeds 
+ another object's content, i.e. this object's content flows around 
+ another's content.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-EMBEDDED-BY:CAPS"></a><code class="literal">ATK_RELATION_EMBEDDED_BY</code></span></p></td>
+<td> Inverse of <a class="link" href="AtkRelation.html#ATK-RELATION-EMBEDS:CAPS"><code class="literal">ATK_RELATION_EMBEDS</code></a>, indicates that
+ this object's content is visualy embedded in another object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-POPUP-FOR:CAPS"></a><code class="literal">ATK_RELATION_POPUP_FOR</code></span></p></td>
+<td> Indicates that an object is a popup for another object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-PARENT-WINDOW-OF:CAPS"></a><code class="literal">ATK_RELATION_PARENT_WINDOW_OF</code></span></p></td>
+<td> Indicates that an object is a parent window of another object.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-DESCRIBED-BY:CAPS"></a><code class="literal">ATK_RELATION_DESCRIBED_BY</code></span></p></td>
+<td> Indicates that another object provides descriptive information about this object; more verbose than ATK_RELATION_LABELLED_BY.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-DESCRIPTION-FOR:CAPS"></a><code class="literal">ATK_RELATION_DESCRIPTION_FOR</code></span></p></td>
+<td> Indicates that an object provides descriptive information about another object; more verbose than ATK_RELATION_LABEL_FOR.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><a name="ATK-RELATION-LAST-DEFINED:CAPS"></a><code class="literal">ATK_RELATION_LAST_DEFINED</code></span></p></td>
+<td> Not used, this value indicates the end of the enumeration.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2618444"></a><h3>
+<a name="atk-relation-type-register"></a>atk_relation_type_register ()</h3>
+<a class="indexterm" name="id2618457"></a><pre class="programlisting"><a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>     atk_relation_type_register          (const gchar *name);</pre>
+<p>
+Associate <em class="parameter"><code>name</code></em> with a new <a class="link" href="AtkRelation.html#AtkRelationType"><span class="type">AtkRelationType</span></a></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></p></td>
+<td> a name string
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> an <a class="link" href="AtkRelation.html#AtkRelationType"><span class="type">AtkRelationType</span></a> associated with <em class="parameter"><code>name</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2618544"></a><h3>
+<a name="atk-relation-type-get-name"></a>atk_relation_type_get_name ()</h3>
+<a class="indexterm" name="id2618558"></a><pre class="programlisting">const gchar*        atk_relation_type_get_name          (<a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a> type);</pre>
+<p>
+Gets the description string describing the <a class="link" href="AtkRelation.html#AtkRelationType"><span class="type">AtkRelationType</span></a> <em class="parameter"><code>type</code></em>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>type</code></em>&#160;:</span></p></td>
+<td> The <a class="link" href="AtkRelation.html#AtkRelationType"><span class="type">AtkRelationType</span></a> whose name is required
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the string describing the AtkRelationType
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2618644"></a><h3>
+<a name="atk-relation-type-for-name"></a>atk_relation_type_for_name ()</h3>
+<a class="indexterm" name="id2618657"></a><pre class="programlisting"><a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>     atk_relation_type_for_name          (const gchar *name);</pre>
+<p>
+Get the <a class="link" href="AtkRelation.html#AtkRelationType"><span class="type">AtkRelationType</span></a> type corresponding to a relation name.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>name</code></em>&#160;:</span></p></td>
+<td> a string which is the (non-localized) name of an ATK relation type.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the <a class="link" href="AtkRelation.html#AtkRelationType"><span class="type">AtkRelationType</span></a> enumerated type corresponding to the specified name,
+         or <a class="link" href="AtkRelation.html#ATK-RELATION-NULL:CAPS"><span class="type">ATK_RELATION_NULL</span></a> if no matching relation type is found.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2618747"></a><h3>
+<a name="atk-relation-new"></a>atk_relation_new ()</h3>
+<a class="indexterm" name="id2618759"></a><pre class="programlisting"><a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a>*        atk_relation_new                    (<a class="link" href="AtkObject.html" title="AtkObject">AtkObject</a> **targets,
+                                                         gint n_targets,
+                                                         <a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a> relationship);</pre>
+<p>
+Create a new relation for the specified key and the specified list
+of targets.  See also <a class="link" href="AtkObject.html#atk-object-add-relationship"><code class="function">atk_object_add_relationship()</code></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>targets</code></em>&#160;:</span></p></td>
+<td> an array of pointers to <span class="type">AtkObjects</span>  
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>n_targets</code></em>&#160;:</span></p></td>
+<td> number of <span class="type">AtkObjects</span> pointed to by <em class="parameter"><code>targets</code></em>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relationship</code></em>&#160;:</span></p></td>
+<td> an <a class="link" href="AtkRelation.html#AtkRelationType"><span class="type">AtkRelationType</span></a> with which to create the new
+ <a class="link" href="AtkRelation.html" title="AtkRelation"><span class="type">AtkRelation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> a pointer to a new <a class="link" href="AtkRelation.html" title="AtkRelation"><span class="type">AtkRelation</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2618922"></a><h3>
+<a name="atk-relation-get-relation-type"></a>atk_relation_get_relation_type ()</h3>
+<a class="indexterm" name="id2618935"></a><pre class="programlisting"><a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>     atk_relation_get_relation_type      (<a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a> *relation);</pre>
+<p>
+Gets the type of <em class="parameter"><code>relation</code></em></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relation</code></em>&#160;:</span></p></td>
+<td> an <a class="link" href="AtkRelation.html" title="AtkRelation"><span class="type">AtkRelation</span></a> 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the type of <em class="parameter"><code>relation</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2619015"></a><h3>
+<a name="atk-relation-get-target"></a>atk_relation_get_target ()</h3>
+<a class="indexterm" name="id2619028"></a><pre class="programlisting">GPtrArray*          atk_relation_get_target             (<a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a> *relation);</pre>
+<p>
+Gets the target list of <em class="parameter"><code>relation</code></em></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relation</code></em>&#160;:</span></p></td>
+<td> an <a class="link" href="AtkRelation.html" title="AtkRelation"><span class="type">AtkRelation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> the target list of <em class="parameter"><code>relation</code></em>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2619107"></a><h3>
+<a name="atk-relation-add-target"></a>atk_relation_add_target ()</h3>
+<a class="indexterm" name="id2619122"></a><pre class="programlisting">void                atk_relation_add_target             (<a class="link" href="AtkRelation.html" title="AtkRelation">AtkRelation</a> *relation,
+                                                         <a class="link" href="AtkObject.html" title="AtkObject">AtkObject</a> *target);</pre>
+<p>
+Adds the specified AtkObject to the target for the relation, if it is
+not already present.  See also <a class="link" href="AtkObject.html#atk-object-add-relationship"><code class="function">atk_object_add_relationship()</code></a>.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>relation</code></em>&#160;:</span></p></td>
+<td> an <a class="link" href="AtkRelation.html" title="AtkRelation"><span class="type">AtkRelation</span></a>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>target</code></em>&#160;:</span></p></td>
+<td> an <a class="link" href="AtkObject.html" title="AtkObject"><span class="type">AtkObject</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since  ATK 1.9
+</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2619231"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2619241"></a><h3>
+<a name="AtkRelation--relation-type"></a>The <code class="literal">"relation-type"</code> property</h3>
+<a class="indexterm" name="id2619257"></a><pre class="programlisting">  "relation-type"            <a class="link" href="AtkRelation.html#AtkRelationType">AtkRelationType</a>       : Read / Write</pre>
+<p>The type of the relation.</p>
+<p>Default value: ATK_RELATION_NULL</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2619284"></a><h3>
+<a name="AtkRelation--target"></a>The <code class="literal">"target"</code> property</h3>
+<a class="indexterm" name="id2619300"></a><pre class="programlisting">  "target"                   GValueArray           : Read / Write</pre>
+<p>An array of the targets for the relation.</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2619325"></a><div class="refsect2" lang="en"><a name="id2619326"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2619327"></a></div>
+</div>
+</div>
+</body>
+</html>

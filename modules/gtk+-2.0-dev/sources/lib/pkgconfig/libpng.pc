@@ -1,0 +1,10 @@
+prefix=/home/cody/cross-build/2.12
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/libpng13
+
+Name: libpng
+Description: Loads and saves PNG files
+Version: 1.2.10
+Libs: -L${libdir} -lpng13
+Cflags: -I${includedir}

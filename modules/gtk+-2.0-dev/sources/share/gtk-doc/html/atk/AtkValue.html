@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>AtkValue</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="ATK - Accessibility Toolkit">
+<link rel="up" href="atk.html" title="ATK Library">
+<link rel="prev" href="AtkUtil.html" title="AtkUtil">
+<link rel="next" href="ix01.html" title="Index">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="atk.html" title="ATK Library">
+<link rel="index" href="ix01.html" title="Index">
+<link rel="index" href="ix02.html" title="Index of deprecated symbols">
+<link rel="index" href="ix03.html" title="Index of new symbols in ATK 1.3">
+<link rel="index" href="ix04.html" title="Index of new symbols in ATK 1.4">
+<link rel="index" href="ix05.html" title="Index of new symbols in ATK 1.6">
+<link rel="index" href="ix06.html" title="Index of new symbols in ATK 1.9">
+<link rel="index" href="ix07.html" title="Index of new symbols in ATK 1.12">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="AtkUtil.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="atk.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">ATK - Accessibility Toolkit</th>
+<td><a accesskey="n" href="ix01.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2663274" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2663495" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2663448" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2663472" class="shortcut">Known Implementations</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="AtkValue"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2663274"></a><span class="refentrytitle">AtkValue</span>
+</h2>
+<p>AtkValue &#8212; The ATK interface implemented by valuators and components which display or
+select a value from a bounded range of values.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+                    <a class="link" href="AtkValue.html#AtkValue-struct">AtkValue</a>;
+void                <a class="link" href="AtkValue.html#atk-value-get-current-value">atk_value_get_current_value</a>         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);
+void                <a class="link" href="AtkValue.html#atk-value-get-maximum-value">atk_value_get_maximum_value</a>         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);
+void                <a class="link" href="AtkValue.html#atk-value-get-minimum-value">atk_value_get_minimum_value</a>         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);
+gboolean            <a class="link" href="AtkValue.html#atk-value-set-current-value">atk_value_set_current_value</a>         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         const GValue *value);
+void                <a class="link" href="AtkValue.html#atk-value-get-minimum-increment">atk_value_get_minimum_increment</a>     (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2663448"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GInterface
+   +----AtkValue
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2663472"></a><h2>Known Implementations</h2>
+<p>
+AtkValue is implemented by
+ <a class="link" href="AtkNoOpObject.html" title="AtkNoOpObject">AtkNoOpObject</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2663495"></a><h2>Description</h2>
+<p>
+<a class="link" href="AtkValue.html" title="AtkValue"><span class="type">AtkValue</span></a> should be implemented for components which either display a
+value from a bounded range, or which allow the user to specify a value
+from a bounded range, or both.  For instance, most sliders and range
+controls, as well as dials, should have <a class="link" href="AtkObject.html" title="AtkObject"><span class="type">AtkObject</span></a> representations which
+implement <a class="link" href="AtkValue.html" title="AtkValue"><span class="type">AtkValue</span></a> on the component's behalf.  <span class="type">AtKValues</span> may be
+read-only, in which case attempts to alter the value return FALSE to
+indicate failure.
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2663548"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2663558"></a><h3>
+<a name="AtkValue-struct"></a>AtkValue</h3>
+<a class="indexterm" name="id2663572"></a><pre class="programlisting">typedef struct _AtkValue AtkValue;</pre>
+<p>
+The AtkValue structure does not contain any fields.
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2663588"></a><h3>
+<a name="atk-value-get-current-value"></a>atk_value_get_current_value ()</h3>
+<a class="indexterm" name="id2663602"></a><pre class="programlisting">void                atk_value_get_current_value         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);</pre>
+<p>
+Gets the value of this object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em>&#160;:</span></p></td>
+<td> a GObject instance that implements AtkValueIface
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GValue</span> representing the current accessible value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2663682"></a><h3>
+<a name="atk-value-get-maximum-value"></a>atk_value_get_maximum_value ()</h3>
+<a class="indexterm" name="id2663696"></a><pre class="programlisting">void                atk_value_get_maximum_value         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);</pre>
+<p>
+Gets the maximum value of this object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em>&#160;:</span></p></td>
+<td> a GObject instance that implements AtkValueIface
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GValue</span> representing the maximum accessible value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2663776"></a><h3>
+<a name="atk-value-get-minimum-value"></a>atk_value_get_minimum_value ()</h3>
+<a class="indexterm" name="id2663790"></a><pre class="programlisting">void                atk_value_get_minimum_value         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);</pre>
+<p>
+Gets the minimum value of this object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em>&#160;:</span></p></td>
+<td> a GObject instance that implements AtkValueIface
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GValue</span> representing the minimum accessible value
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2663870"></a><h3>
+<a name="atk-value-set-current-value"></a>atk_value_set_current_value ()</h3>
+<a class="indexterm" name="id2663884"></a><pre class="programlisting">gboolean            atk_value_set_current_value         (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         const GValue *value);</pre>
+<p>
+Sets the value of this object.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em>&#160;:</span></p></td>
+<td> a GObject instance that implements AtkValueIface
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GValue</span> which is the desired new accessible value.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> <code class="literal">TRUE</code> if new value is successfully set, <code class="literal">FALSE</code> otherwise.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2663996"></a><h3>
+<a name="atk-value-get-minimum-increment"></a>atk_value_get_minimum_increment ()</h3>
+<a class="indexterm" name="id2664012"></a><pre class="programlisting">void                atk_value_get_minimum_increment     (<a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a> *obj,
+                                                         GValue *value);</pre>
+<p>
+Gets the minimum increment by which the value of this object may be changed.  If zero,
+the minimum increment is undefined, which may mean that it is limited only by the 
+floating point precision of the platform.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em>&#160;:</span></p></td>
+<td> a GObject instance that implements AtkValueIface
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GValue</span> representing the minimum increment by which the accessible value may be changed
+</td>
+</tr>
+</tbody>
+</table></div>
+<p class="since">Since  ATK 1.12
+</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2664104"></a><div class="refsect2" lang="en"><a name="id2664106"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2664107"></a></div>
+</div>
+</div>
+</body>
+</html>

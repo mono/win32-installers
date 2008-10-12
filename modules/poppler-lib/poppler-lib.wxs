@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Module Id="poppler_lib" Language="1033" Version="0.6.2">
+    <Package Id="c566dd8a-0749-11dd-9af8-001a6bce76fb" Manufacturer="Popper Project"
+             InstallerVersion="200" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+        <Directory Id="bin" Name="bin">
+
+          <Component Id="libpoppler" Guid="22ccac7a-074a-11dd-9af8-001a6bce76fb">
+            <File Id="libpoppler_2.dll" Name="libpoppler-2.dll" Source="source\bin\libpoppler-2.dll" Vital="yes" />
+            <File Id="libpoppler_glib_2.dll" Name="libpoppler-glib-2.dll" Source="source\bin\libpoppler-glib-2.dll" Vital="yes" />
+          </Component>
+
+        </Directory>
+      </Directory>
+    </Directory>
+
+  </Module>
+</Wix>

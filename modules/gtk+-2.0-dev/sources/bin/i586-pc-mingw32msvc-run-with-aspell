@@ -1,0 +1,4 @@
+#!/bin/sh
+PATH=/home/cody/cross-build/2.10/lib/aspell-0.60:$PATH
+export PATH
+exec $@

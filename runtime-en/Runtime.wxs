@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="3214DC01-F557-4fba-BD76-34C2881B325B" Name="Gtk# 2.10 Runtime" Language="1033"
+           Version="2.10.4" Manufacturer="Medsphere Systems Corporation"
+           UpgradeCode="c5c56f44-029e-11dd-aa4e-001a6bce76fb">
+    <Package InstallerVersion="200" Compressed="yes"
+           Description="Gtk# 2.10 Runtime Installer"
+           Comments="Provides Gtk# 2.10 and Gtk+ 2.12" />
+    <Media Id="1" Cabinet="WixProject1.cab" EmbedCab="yes" />
+
+    <Condition Message="This setup requires the .NET Framework 1.1 or higher.">
+      <![CDATA[MsiNetAssemblySupport >= "1.1.4322"]]>
+    </Condition>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder" Name="PFiles">
+        <Directory Id="Medsphere" Name="Medsphere">
+          <Directory Id="INSTALLLOCATION" Name="Gtk# Runtime">
+	    <Merge Id="gtk_-2_0-lib" Language="1033" SourceFile="../modules/gtk+-2.0-lib/gtk+-2.0-lib.msm" DiskId="1" />
+	    <Merge Id="glade-2-lib" Language="1033" SourceFile="../modules/glade-2-lib/glade-2-lib.msm" DiskId="1" />
+	    <Merge Id="gtk-sharp-2_0-lib" Language="1033" SourceFile="../modules/gtk-sharp-2.0-lib/gtk-sharp-2.0-lib.msm" DiskId="1" />
+	    <Merge Id="mono-cairo-lib" Language="1033" SourceFile="../modules/mono-cairo-lib/mono-cairo-lib.msm" DiskId="1" />
+	    <Merge Id="poppler-lib" Language="1033" SourceFile="../modules/poppler-lib/poppler-lib.msm" DiskId="1" />
+	    <Merge Id="aspell-lib" Language="1033" SourceFile="../modules/aspell-lib/aspell-lib.msm" DiskId="1" />
+	    <Merge Id="vte-lib" Language="1033" SourceFile="../modules/vte-lib/vte-lib.msm" DiskId="1" />
+	    <Merge Id="vte-sharp-lib" Language="1033" SourceFile="../modules/vte-sharp-lib/vte-sharp-lib.msm" DiskId="1" />
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Default" Title="Default" Level="1">
+      <MergeRef Id="gtk_-2_0-lib" />
+      <MergeRef Id="glade-2-lib" />
+      <MergeRef Id="gtk-sharp-2_0-lib" />
+      <MergeRef Id="mono-cairo-lib" />
+      <MergeRef Id="poppler-lib" />
+      <MergeRef Id="aspell-lib" />
+      <MergeRef Id="vte-lib" />
+      <MergeRef Id="vte-sharp-lib" />
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_InstallDir" />
+    <WixVariable Id="WixUILicenseRtf" Value="license.rtf" />
+  </Product>
+</Wix>

@@ -1,0 +1,27 @@
+2008-09-18  Cody Russell  <cody.russell@medsphere.com>
+
+	* modules\mono-cairo-lib\sources\lib\Mono.Cairo.dll: Removed
+	* modules\mono-cairo-lib\sources\lib\1.0\Mono.Cairo.dll: Added.
+	* modules\mono-cairo-lib\sources\lib\2.0\Mono.Cairo.dll: Added.
+	* modules\mono-cairo-lib\mono-cairo-lib.wxs: Add support for
+	installing both Mono.Cairo.dll 1.0.500.0 and 2.0.0.0.
+
+2008-07-10  Brad Taylor  <brad.taylor@medsphere.com>
+	
+	* modules\gtk+-2.0-lib\source\bin\libgdk-win32-2.0-0.dll:
+	  Update libgdk-win32 to r20806, fixing gtk+ bug #540994. From Cody
+	  Russell <cody.russell@medsphere.com>
+	
+	* modules\mono-cairo-lib\mono-cairo-lib.wxs: Ensure that
+	  Mono.Cairo.dll is copied as well as GACed so that the -dev version
+	  will work properly.
+
+2008-06-23  Brad Taylor  <brad.taylor@medsphere.com>
+	
+	* modules\gtk+-2.0-lib\source\etc\pango\pango.modules:
+	  Patch from Cody Russell <cody.russell@medsphere.com> to fix Pango
+	  warnings.
+
+2008-04-23  Brad Taylor  <brad.taylor@medsphere.com>
+	
+	* Initial import

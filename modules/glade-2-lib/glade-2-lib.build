@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<project name="glade-2-lib" default="build">
+  <include buildfile="../../build/module.include" />
+</project>

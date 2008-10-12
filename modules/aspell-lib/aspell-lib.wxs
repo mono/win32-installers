@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Module Id="aspell_lib" Language="1033" Version="0.60.5">
+    <Package Id="53e01a4c-074d-11dd-9af8-001a6bce76fb" Manufacturer="Aspell Project"
+             InstallerVersion="200" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+        <Directory Id="bin" Name="bin">
+          <Component Id="binaries" Guid="6067b7ca-074d-11dd-9af8-001a6bce76fb">
+            <File Id="aspell_15.dll" Name="aspell-15.dll" Source="source\bin\aspell-15.dll" Vital="yes" />
+          </Component>
+        </Directory>
+        <Directory Id="data" Name="data">
+          <Component Id="data_stuff" Guid="7f5bc2fc-074d-11dd-9af8-001a6bce76fb">
+            <File Id="ASCII.dat" Name="ASCII.dat" Source="source\data\ASCII.dat" Vital="yes" />
+            <File Id="dvorak.kbd" Name="dvorak.kbd" Source="source\data\dvorak.kbd" Vital="yes" />
+            <File Id="en.dat" Name="en.dat" Source="source\data\en.dat" Vital="yes" />
+            <File Id="en_phonet.dat" Name="en_phonet.dat" Source="source\data\en_phonet.dat" Vital="yes" />
+            <File Id="iso8859_1.dat" Name="iso8859-1.dat" Source="source\data\iso8859-1.dat" Vital="yes" />
+            <File Id="iso8859_2.dat" Name="iso8859-2.dat" Source="source\data\iso8859-2.dat" Vital="yes" />
+            <File Id="iso8859_3.dat" Name="iso8859-3.dat" Source="source\data\iso8859-3.dat" Vital="yes" />
+            <File Id="iso8859_4.dat" Name="iso8859-4.dat" Source="source\data\iso8859-4.dat" Vital="yes" />
+            <File Id="iso8859_5.dat" Name="iso8859-5.dat" Source="source\data\iso8859-5.dat" Vital="yes" />
+            <File Id="iso8859_6.dat" Name="iso8859-6.dat" Source="source\data\iso8859-6.dat" Vital="yes" />
+            <File Id="iso8859_7.dat" Name="iso8859-7.dat" Source="source\data\iso8859-7.dat" Vital="yes" />
+            <File Id="iso8859_8.dat" Name="iso8859-8.dat" Source="source\data\iso8859-8.dat" Vital="yes" />
+            <File Id="iso8859_9.dat" Name="iso8859-9.dat" Source="source\data\iso8859-9.dat" Vital="yes" />
+            <File Id="iso8859_10.dat" Name="iso8859-10.dat" Source="source\data\iso8859-10.dat" Vital="yes" />
+            <File Id="iso8859_13.dat" Name="iso8859-13.dat" Source="source\data\iso8859-13.dat" Vital="yes" />
+            <File Id="iso8859_14.dat" Name="iso8859-14.dat" Source="source\data\iso8859-14.dat" Vital="yes" />
+            <File Id="iso8859_15.dat" Name="iso8859-15.dat" Source="source\data\iso8859-15.dat" Vital="yes" />
+            <File Id="koi8_f.dat" Name="koi8-f.dat" Source="source\data\koi8-f.dat" Vital="yes" />
+            <File Id="koi8_r.dat" Name="koi8-r.dat" Source="source\data\koi8-r.dat" Vital="yes" />
+            <File Id="koi8_u.dat" Name="koi8-u.dat" Source="source\data\koi8-u.dat" Vital="yes" />
+            <File Id="standard.kbd" Name="standard.kbd" Source="source\data\standard.kbd" Vital="yes" />
+            <File Id="viscii.dat" Name="viscii.dat" Source="source\data\viscii.dat" Vital="yes" />
+          </Component>
+        </Directory>
+        <Directory Id="dict" Name="dict">
+          <Component Id="dictionaries" Guid="b149caba-074e-11dd-9af8-001a6bce76fb">
+            <File Id="american.alias" Name="american.alias" Source="source\dict\american.alias" Vital="yes" />
+            <File Id="american_w_accents.alias" Name="american-w-accents.alias" Source="source\dict\american-w-accents.alias" Vital="yes" />
+            <File Id="british.alias" Name="british.alias" Source="source\dict\british.alias" Vital="yes" />
+            <File Id="british_w_accents.alias" Name="british-w-accents.alias" Source="source\dict\british-w-accents.alias" Vital="yes" />
+            <File Id="canadian.alias" Name="canadian.alias" Source="source\dict\canadian.alias" Vital="yes" />
+            <File Id="canadian_w_accents.alias" Name="canadian-w-accents.alias" Source="source\dict\canadian-w-accents.alias" Vital="yes" />
+            <File Id="en.multi" Name="en.multi" Source="source\dict\en.multi" Vital="yes" />
+            <File Id="en_CA.multi" Name="en_CA.multi" Source="source\dict\en_CA.multi" Vital="yes" />
+            <File Id="en_CA_only.rws" Name="en_CA-only.rws" Source="source\dict\en_CA-only.rws" Vital="yes" />
+            <File Id="en_CA_w_accents.multi" Name="en_CA-w-accents.multi" Source="source\dict\en_CA-w-accents.multi" Vital="yes" />
+            <File Id="en_GB.multi" Name="en_GB.multi" Source="source\dict\en_GB.multi" Vital="yes" />
+            <File Id="en_GB_only.rws" Name="en_GB-only.rws" Source="source\dict\en_GB-only.rws" Vital="yes" />
+            <File Id="en_GB_w_accents.multi" Name="en_GB-w-accents.multi" Source="source\dict\en_GB-w-accents.multi" Vital="yes" />
+            <File Id="en_US.multi" Name="en_US.multi" Source="source\dict\en_US.multi" Vital="yes" />
+            <File Id="en_US_only.rws" Name="en_US-only.rws" Source="source\dict\en_US-only.rws" Vital="yes" />
+            <File Id="en_US_w_accents.multi" Name="en_US-w-accents.multi" Source="source\dict\en_US-w-accents.multi" Vital="yes" />
+            <File Id="english.alias" Name="english.alias" Source="source\dict\english.alias" Vital="yes" />
+            <File Id="en_only.rws" Name="en-only.rws" Source="source\dict\en-only.rws" Vital="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+  </Module>
+</Wix>

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+<title>AtkNoOpObject</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="ATK - Accessibility Toolkit">
+<link rel="up" href="atk.html" title="ATK Library">
+<link rel="prev" href="AtkImage.html" title="AtkImage">
+<link rel="next" href="AtkNoOpObjectFactory.html" title="AtkNoOpObjectFactory">
+<meta name="generator" content="GTK-Doc V1.9 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="atk.html" title="ATK Library">
+<link rel="index" href="ix01.html" title="Index">
+<link rel="index" href="ix02.html" title="Index of deprecated symbols">
+<link rel="index" href="ix03.html" title="Index of new symbols in ATK 1.3">
+<link rel="index" href="ix04.html" title="Index of new symbols in ATK 1.4">
+<link rel="index" href="ix05.html" title="Index of new symbols in ATK 1.6">
+<link rel="index" href="ix06.html" title="Index of new symbols in ATK 1.9">
+<link rel="index" href="ix07.html" title="Index of new symbols in ATK 1.12">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="AtkImage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="atk.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">ATK - Accessibility Toolkit</th>
+<td><a accesskey="n" href="AtkNoOpObjectFactory.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#id2596786" class="shortcut">Top</a>
+                  &#160;|&#160;
+                  <a href="#id2596945" class="shortcut">Description</a>
+                  &#160;|&#160;
+                  <a href="#id2596828" class="shortcut">Object Hierarchy</a>
+                  &#160;|&#160;
+                  <a href="#id2596860" class="shortcut">Implemented Interfaces</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="AtkNoOpObject"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2>
+<a name="id2596786"></a><span class="refentrytitle">AtkNoOpObject</span>
+</h2>
+<p>AtkNoOpObject &#8212; An AtkObject which purports to implement all ATK interfaces.</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<h2>Synopsis</h2>
+<pre class="synopsis">
+
+
+
+                    <a class="link" href="AtkNoOpObject.html#AtkNoOpObject-struct">AtkNoOpObject</a>;
+<a class="link" href="AtkObject.html" title="AtkObject">AtkObject</a>*          <a class="link" href="AtkNoOpObject.html#atk-no-op-object-new">atk_no_op_object_new</a>                (GObject *obj);
+
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2596828"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+
+  GObject
+   +----<a class="link" href="AtkObject.html" title="AtkObject">AtkObject</a>
+         +----AtkNoOpObject
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2596860"></a><h2>Implemented Interfaces</h2>
+<p>
+AtkNoOpObject implements
+ <a class="link" href="AtkAction.html" title="AtkAction">AtkAction</a>,  <a class="link" href="AtkComponent.html" title="AtkComponent">AtkComponent</a>,  <a class="link" href="AtkDocument.html" title="AtkDocument">AtkDocument</a>,  <a class="link" href="AtkEditableText.html" title="AtkEditableText">AtkEditableText</a>,  <a class="link" href="AtkHypertext.html" title="AtkHypertext">AtkHypertext</a>,  <a class="link" href="AtkImage.html" title="AtkImage">AtkImage</a>,  <a class="link" href="AtkSelection.html" title="AtkSelection">AtkSelection</a>,  <a class="link" href="AtkTable.html" title="AtkTable">AtkTable</a>,  <a class="link" href="AtkText.html" title="AtkText">AtkText</a> and  <a class="link" href="AtkValue.html" title="AtkValue">AtkValue</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2596945"></a><h2>Description</h2>
+<p>
+An AtkNoOpObject is an AtkObject which purports to implement all ATK 
+interfaces. It is the type of AtkObject which is created if an accessible
+object is requested for an object type for which no factory type is specified.
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2596963"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="id2596974"></a><h3>
+<a name="AtkNoOpObject-struct"></a>AtkNoOpObject</h3>
+<a class="indexterm" name="id2596987"></a><pre class="programlisting">typedef struct _AtkNoOpObject AtkNoOpObject;</pre>
+<p>
+The AtkNoOpObject structure should not be accessed directly.
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="id2597004"></a><h3>
+<a name="atk-no-op-object-new"></a>atk_no_op_object_new ()</h3>
+<a class="indexterm" name="id2597016"></a><pre class="programlisting"><a class="link" href="AtkObject.html" title="AtkObject">AtkObject</a>*          atk_no_op_object_new                (GObject *obj);</pre>
+<p>
+Provides a default (non-functioning stub) <a class="link" href="AtkObject.html" title="AtkObject"><span class="type">AtkObject</span></a>.
+Application maintainers should not use this method.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em>&#160;:</span></p></td>
+<td> a <span class="type">GObject</span>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span>&#160;:</span></p></td>
+<td> a default (non-functioning stub) <a class="link" href="AtkObject.html" title="AtkObject"><span class="type">AtkObject</span></a>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="id2597102"></a><div class="refsect2" lang="en"><a name="id2597103"></a></div>
+<hr>
+<div class="refsect2" lang="en"><a name="id2597104"></a></div>
+</div>
+</div>
+</body>
+</html>

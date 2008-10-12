@@ -1,0 +1,13 @@
+prefix=/home/cody/cross-build/2.12
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: cairo
+Description: Multi-platform 2D graphics library
+Version: 1.5.20
+
+Requires.private: freetype2 >= 9.7.3 fontconfig libpng12 pixman-1 >= 0.10.0 
+Libs: -L${libdir} -lcairo
+Libs.private: -lz -lz -lm
+Cflags: -I${includedir}/cairo

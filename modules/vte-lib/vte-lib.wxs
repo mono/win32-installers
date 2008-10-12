@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Module Id="vte_lib" Language="1033" Version="0.16.9">
+    <Package Id="4c38eba6-0753-11dd-9af8-001a6bce76fb" Manufacturer="GNOME Project"
+             InstallerVersion="200" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+        <Directory Id="bin" Name="bin">
+          <Component Id="binaries" Guid="5880bad8-0753-11dd-9af8-001a6bce76fb">
+            <File Id="libvte_9.dll" Name="libvte-9.dll" Source="source\bin\libvte-9.dll" Vital="yes" />
+            <File Id="libgnurx_0.dll" Name="libgnurx-0.dll" Source="source\bin\libgnurx-0.dll" Vital="yes" />
+          </Component>
+        </Directory>
+        <Directory Id="lib" Name="lib">
+          <Directory Id="libvte" Name="vte">
+            <Component Id="vte_stuff" Guid="861c2a36-0753-11dd-9af8-001a6bce76fb">
+              <File Id="interpret.exe" Name="interpret.exe" Source="source\lib\vte\interpret.exe" Vital="yes" />
+              <File Id="iso8859mode.exe" Name="iso8859mode.exe" Source="source\lib\vte\iso8859mode.exe" Vital="yes" />
+              <File Id="nativeecho.exe" Name="nativeecho.exe" Source="source\lib\vte\nativeecho.exe" Vital="yes" />
+              <File Id="osc" Name="osc" Source="source\lib\vte\osc" Vital="yes" />
+              <File Id="utf8echo.exe" Name="utf8echo.exe" Source="source\lib\vte\utf8echo.exe" Vital="yes" />
+              <File Id="utf8mode.exe" Name="utf8mode.exe" Source="source\lib\vte\utf8mode.exe" Vital="yes" />
+              <File Id="vterdb.exe" Name="vterdb.exe" Source="source\lib\vte\vterdb.exe" Vital="yes" />
+              <File Id="window" Name="window" Source="source\lib\vte\window" Vital="yes" />
+              <File Id="decset" Name="decset" Source="source\lib\vte\decset" Vital="yes" />
+            </Component>
+          </Directory>
+        </Directory>
+        <Directory Id="share" Name="share">
+          <Directory Id="sharevte" Name="vte">
+            <Directory Id="termcap" Name="termcap">
+              <Component Id="termcaps" Guid="622db4cc-0754-11dd-9af8-001a6bce76fb">
+                <File Id="xterm" Name="xterm" Source="source\share\vte\termcap\xterm" Vital="yes" />
+              </Component>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+
+  </Module>
+</Wix>
