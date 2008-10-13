@@ -1,4 +1,4 @@
-MODULE = aspell-lib
+MODULE = mono-cairo-lib
 CANDLE_FLAGS = 
 LIGHT_FLAGS = 
 
