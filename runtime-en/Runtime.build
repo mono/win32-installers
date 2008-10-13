@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-<project name="Runtime" default="build">
-  <include buildfile="../build/installer.include" />
-</project>
