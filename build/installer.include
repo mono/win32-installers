@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project default="">
+  <loadtasks assembly="../build/Microsoft.Tools.WindowsInstallerXml.NAntTasks.dll" />
+
+  <target name="build" depends="compile,link" />
+  <target name="compile">
+    <candle out="${project::get-name()}.wixobj">
+      <sources>
+        <include name="${project::get-name()}.wxs" />
+      </sources>
+    </candle>
+  </target>
+  <target name="link" depends="compile">
+    <light out="${project::get-name()}.msi"
+           cultures="en-us"
+           extensions="WixUIExtension"
+           defaultcompressionlevel="high">
+      <sources>
+        <include name="${project::get-name()}.wixobj" />
+      </sources>
+    </light>
+  </target>
+  <target name="clean">
+    <delete>
+      <fileset>
+        <include name="${project::get-name()}.wixobj" />
+        <include name="${project::get-name()}.msi" />
+      </fileset>
+    </delete>
+  </target> 
+</project>

@@ -1,0 +1,42 @@
+--- C:/Documents and Settings/Brad/Desktop/src/NAntTasks/LightTask.cs	Fri Dec 08 13:32:18 2006
++++ C:/Documents and Settings/Brad/Desktop/wix-3.0.2925.0-sources/src/NAntTasks/LightTask.cs	Wed Apr 23 09:23:12 2008
+@@ -31,6 +31,7 @@
+         private string cultures;
+         private FileSet localizations;
+         private string suppressICEs;
++        private string defaultCompressionLevel;
+         #endregion
+ 
+         #region Constructors
+@@ -81,6 +82,16 @@
+             get { return this.suppressICEs; }
+             set { this.suppressICEs = value; }
+         }
++
++        /// <summary>
++        /// Gets or sets the option to set the default compression level
++        /// </summary>
++        [TaskAttribute("defaultcompressionlevel")]
++        public string DefaultCompressionLevel
++        {
++            get { return this.defaultCompressionLevel; }
++            set { this.defaultCompressionLevel = value; }
++        }
+         #endregion
+ 
+         #region Methods
+@@ -113,7 +124,12 @@
+                     writer.WriteLine("-sice:{0}", suppressICE);
+                 }
+             }
++
++            if (this.defaultCompressionLevel != null)
++            {
++                writer.WriteLine("-dcl:{0}", defaultCompressionLevel);
++            }
+         }
+         #endregion
+     }
+-}
+\ No newline at end of file
++}
