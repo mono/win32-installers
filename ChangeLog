@@ -1,3 +1,9 @@
+2008-10-21  Mike Kestner  <mkestner@novell.com>
+
+	* runtime-en/Runtime.wxs: 
+	* sdk-en/SDK.wxs: 
+	update provider and install locations and product guids.
+
 2008-09-18  Cody Russell  <cody.russell@medsphere.com>
 
 	* modules\mono-cairo-lib\sources\lib\Mono.Cairo.dll: Removed

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="3214DC01-F557-4fba-BD76-34C2881B325B" Name="Gtk# 2.10 Runtime" Language="1033"
-           Version="2.10.4" Manufacturer="Medsphere Systems Corporation"
-           UpgradeCode="c5c56f44-029e-11dd-aa4e-001a6bce76fb">
+  <Product Id="1EEB8931-A192-42E6-AC50-9BA046E2E9DD" Name="Gtk# 2.12 Runtime" Language="1033"
+           Version="2.12.5" Manufacturer="Novell, Inc."
+           UpgradeCode="6AAF2A04-27B0-4D70-8EBB-3EB225794B3F">
     <Package InstallerVersion="200" Compressed="yes"
-           Description="Gtk# 2.10 Runtime Installer"
-           Comments="Provides Gtk# 2.10 and Gtk+ 2.12" />
+           Description="Gtk# 2.12 Runtime Installer"
+           Comments="Provides Gtk# 2.12 and Gtk+ 2.12" />
     <Media Id="1" Cabinet="WixProject1.cab" EmbedCab="yes" />
 
     <Condition Message="This setup requires the .NET Framework 1.1 or higher.">
@@ -14,11 +14,11 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="PFiles">
-        <Directory Id="Medsphere" Name="Medsphere">
-          <Directory Id="INSTALLLOCATION" Name="Gtk# Runtime">
+        <Directory Id="GtkSharp" Name="GtkSharp">
+          <Directory Id="INSTALLLOCATION" Name="Runtime">
 	    <Merge Id="gtk_-2_0-lib" Language="1033" SourceFile="../modules/gtk+-2.0-lib/gtk+-2.0-lib.msm" DiskId="1" />
 	    <Merge Id="glade-2-lib" Language="1033" SourceFile="../modules/glade-2-lib/glade-2-lib.msm" DiskId="1" />
-	    <Merge Id="gtk-sharp-2_0-lib" Language="1033" SourceFile="../modules/gtk-sharp-2.0-lib/gtk-sharp-2.0-lib.msm" DiskId="1" />
+	    <Merge Id="gtk-sharp-2_0-lib" Language="1033" SourceFile="../gtk-sharp-2.0-lib.msm" DiskId="1" />
 	    <Merge Id="mono-cairo-lib" Language="1033" SourceFile="../modules/mono-cairo-lib/mono-cairo-lib.msm" DiskId="1" />
 	    <Merge Id="poppler-lib" Language="1033" SourceFile="../modules/poppler-lib/poppler-lib.msm" DiskId="1" />
 	    <Merge Id="aspell-lib" Language="1033" SourceFile="../modules/aspell-lib/aspell-lib.msm" DiskId="1" />

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="242861f0-0a5f-11dd-9af8-001a6bce76fb" Name="Gtk# 2.10 SDK" Language="1033"
-           Version="2.10.4" Manufacturer="Medsphere Systems Corporation"
-           UpgradeCode="2b6eb89c-0a5f-11dd-9af8-001a6bce76fb">
+  <Product Id="B7B5B5FF-41B1-455D-B58D-0EC8C5C0F03F" Name="Gtk# 2.12 SDK" Language="1033"
+           Version="2.12.5" Manufacturer="Novell, Inc."
+           UpgradeCode="4974A8AD-20E1-45F7-BB1D-91430A609356">
     <Package InstallerVersion="200" Compressed="yes"
-             Description="Gtk# 2.10 Software Development Kit Installer"
-             Comments="Provides Gtk# 2.10 and Gtk+ 2.12" />
+             Description="Gtk# 2.12 Software Development Kit Installer"
+             Comments="Provides Gtk# 2.12 and Gtk+ 2.12" />
     <Media Id="1" Cabinet="WixProject1.cab" EmbedCab="yes" />
 
     <Condition Message="This setup requires the .NET Framework 1.1 or higher.">
@@ -17,15 +17,15 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="PFiles">
-        <Directory Id="Medsphere" Name="Medsphere">
-          <Directory Id="INSTALLLOCATION" Name="Gtk# SDK">
+        <Directory Id="GtkSharp" Name="GtkSharp">
+          <Directory Id="INSTALLLOCATION" Name="SDK">
 
 	    <Merge Id="gtk_-2_0-lib" Language="1033" SourceFile="../modules/gtk+-2.0-lib/gtk+-2.0-lib.msm" DiskId="1" />
 	    <Merge Id="gtk_-2_0-dev" Language="1033" SourceFile="../modules/gtk+-2.0-dev/gtk+-2.0-dev.msm" DiskId="1" />
 	    <Merge Id="glade-2-lib" Language="1033" SourceFile="../modules/glade-2-lib/glade-2-lib.msm" DiskId="1" />
 	    <Merge Id="glade-2-dev" Language="1033" SourceFile="../modules/glade-2-dev/glade-2-dev.msm" DiskId="1" />
-	    <Merge Id="gtk-sharp-2_0-lib" Language="1033" SourceFile="../modules/gtk-sharp-2.0-lib/gtk-sharp-2.0-lib.msm" DiskId="1" />
-	    <Merge Id="gtk-sharp-2_0-dev" Language="1033" SourceFile="../modules/gtk-sharp-2.0-dev/gtk-sharp-2.0-dev.msm" DiskId="1" />
+	    <Merge Id="gtk-sharp-2_0-lib" Language="1033" SourceFile="../gtk-sharp-2.0-lib.msm" DiskId="1" />
+	    <Merge Id="gtk-sharp-2_0-dev" Language="1033" SourceFile="../gtk-sharp-2.0-dev.msm" DiskId="1" />
 	    <Merge Id="mono-cairo-lib" Language="1033" SourceFile="../modules/mono-cairo-lib/mono-cairo-lib.msm" DiskId="1" />
 	    <Merge Id="mono-cairo-dev" Language="1033" SourceFile="../modules/mono-cairo-dev/mono-cairo-dev.msm" DiskId="1" />
 	    <Merge Id="poppler-lib" Language="1033" SourceFile="../modules/poppler-lib/poppler-lib.msm" DiskId="1" />
