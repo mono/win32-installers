@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Product Id="1EEB8931-A192-42E6-AC50-9BA046E2E9DD" Name="Gtk# 2.12 Runtime" Language="1033"
-           Version="2.12.5" Manufacturer="Novell, Inc."
+           Version="2.12.6" Manufacturer="Novell, Inc."
            UpgradeCode="6AAF2A04-27B0-4D70-8EBB-3EB225794B3F">
     <Package InstallerVersion="200" Compressed="yes"
            Description="Gtk# 2.12 Runtime Installer"
