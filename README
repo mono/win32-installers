@@ -13,14 +13,33 @@ Requirements
  * Wix 3.0.3725.0 or greater installed, and the location of the "bin" folder in 
    your PATH.
 
- * NAnt 0.85 or greater installed, and the location of the "bin" folder in your
-   PATH.
+Building Installers
+=====================
+To build an installer for a gtk-sharp version, first build the desired 
+gtk-sharp tarball using:
+
+./configure
+make win32-installer
+
+Copy the resulting .msm files from the gtk-sharp directory into the
+toplevel directory of this module. Then update the following files:
+
+runtime-en/Runtime.wxs
+sdk-en/SDK.wxs
+
+to reflect the version of gtk-sharp you are building.  Then make in the
+toplevel directory of this module to build the necessary gtk+, glade, and
+dependency msm modules and the runtime and sdk msi installers.
+
+The two installers will reside in runtime-en and sdk-en when the build
+succeeds.
+
 
 Building Merge Modules
 ======================
 
 To build individual merge modules, open the Command Line (Start -> Run ->
-"cmd") and change directory into the module you want to build.  Run "nant" to
+"cmd") and change directory into the module you want to build.  Run "make" to
 build the module.
 
 Individual merge modules can be merged into other MSI-based installers to
@@ -32,9 +51,3 @@ unpredicatble ways.  Your mileage may vary.
 As a convention, the -dev modules require the -lib modules to be installed and
 merged.
 
-Building Installers
-===================
-
-First, make sure all modules that are required for this installer are built.  Or, build all the modules to be sure.
-
-Then in the Command Line, change directory to where the installer files are and run "nant" to build.
