@@ -31,6 +31,7 @@
 	    <Merge Id="poppler-lib" Language="1033" SourceFile="../modules/poppler-lib/poppler-lib.msm" DiskId="1" />
 	    <Merge Id="aspell-lib" Language="1033" SourceFile="../modules/aspell-lib/aspell-lib.msm" DiskId="1" />
 	    <Merge Id="vte-lib" Language="1033" SourceFile="../modules/vte-lib/vte-lib.msm" DiskId="1" />
+	    <Merge Id="vte-dev" Language="1033" SourceFile="../modules/vte-dev/vte-dev.msm" DiskId="1" />
 	    <Merge Id="vte-sharp-lib" Language="1033" SourceFile="../modules/vte-sharp-lib/vte-sharp-lib.msm" DiskId="1" />
 	    <Merge Id="vte-sharp-dev" Language="1033" SourceFile="../modules/vte-sharp-dev/vte-sharp-dev.msm" DiskId="1" />
 
@@ -102,6 +103,7 @@
       <MergeRef Id="poppler-lib" />
       <MergeRef Id="aspell-lib" />
       <MergeRef Id="vte-lib" />
+      <MergeRef Id="vte-dev" />
       <MergeRef Id="vte-sharp-lib" />
       <MergeRef Id="vte-sharp-dev" />
       <ComponentRef Id="urls" />

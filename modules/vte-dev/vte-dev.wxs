@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Module Id="vte_dev" Language="1033" Version="0.16.9">
+    <Package Id="10f6e37a-e189-11dd-933b-00146c2e6bb6" InstallerVersion="200" Manufacturer="GNOME Project"/>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+        <Directory Id="include" Name="include">
+          <Directory Id="vte" Name="vte">
+            <Component Guid="10f6e37b-e189-11dd-933b-00146c2e6bb6" Id="vte_component">
+              <File Id="reaper_h" Name="reaper.h" Source="sources/include/vte/reaper.h" Vital="yes"/>
+              <File Id="vte_h" Name="vte.h" Source="sources/include/vte/vte.h" Vital="yes"/>
+              <File Id="vteaccess_h" Name="vteaccess.h" Source="sources/include/vte/vteaccess.h" Vital="yes"/>
+              <File Id="pty_h" Name="pty.h" Source="sources/include/vte/pty.h" Vital="yes"/>
+            </Component>
+          </Directory>
+        </Directory>
+        <Directory Id="lib" Name="lib">
+          <Directory Id="pkgconfig" Name="pkgconfig">
+            <Component Guid="9f8ecd3a-e1a0-11dd-933b-00146c2e6bb6" Id="vtepkgconfig_component">
+              <File Id="vte_pc" Name="vte.pc" Source="sources/lib/pkgconfig/vte.pc" Vital="yes"/>
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Module>
+</Wix>
+

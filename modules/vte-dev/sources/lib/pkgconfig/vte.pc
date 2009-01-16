@@ -1,0 +1,14 @@
+prefix=/opt/gtk
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+defaultemulation=xterm
+
+Name: vte
+Description: Vte terminal widget.
+Version: 0.16.9
+Requires: glib-2.0 gobject-2.0 gtk+-2.0 fontconfig pango
+Libs: -L${libdir} -lvte 
+Libs.private: -lfreetype -lz  
+Cflags: -I${includedir} -I/usr/include/freetype2   
