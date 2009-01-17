@@ -26,6 +26,16 @@
                     Source="source\lib\gtk-sharp-2.0\vte\vte-sharp.dll" Vital="yes" />
             </Component>
 
+	    <Component Id="vtesharp_policy.2.4" Guid="b1d7b18e-e1b1-11dd-933b-00146c2e6bb6">
+	      <File Id="policy.2.4.vtesharp.dll" Name="policy.2.4.vte-sharp.dll" Assembly=".net"
+		    KeyPath="yes" Source="source\lib\gtk-sharp-2.0\vte\policy.2.4.vte-sharp.dll"
+		    Vital="no" />
+
+	      <File Id="policy.2.4.vtesharp.config" Name="policy.2.4.config"
+		    CompanionFile="policy.2.4.vtesharp.dll"
+		    Source="source\lib\gtk-sharp-2.0\vte\policy.2.4.config" Vital="no" />
+	    </Component>
+
             <Component Id="vtesharp_policy.2.6" Guid="68E2449A-815C-4f89-A3E9-7426FC051CFE">
               <File Id="policy.2.6.vtesharp.dll" Name="policy.2.6.vte-sharp.dll" Assembly=".net" 
                     KeyPath="yes" Source="source\lib\gtk-sharp-2.0\vte\policy.2.6.vte-sharp.dll"
@@ -34,8 +44,17 @@
               <File Id="policy.2.6.vtesharp.config" Name="policy.2.6.config" 
                     CompanionFile="policy.2.6.vtesharp.dll" 
                     Source="source\lib\gtk-sharp-2.0\vte\policy.2.6.config" Vital="no" />
-              </Component>
-              
+            </Component>
+
+            <Component Id="vtesharp_policy.2.8" Guid="41d7b73e-e1b2-11dd-933b-00146c2e6bb6">
+              <File Id="policy.2.8.vtesharp.dll" Name="policy.2.8.vte-sharp.dll" Assembly=".net"
+                    KeyPath="yes" Source="source\lib\gtk-sharp-2.0\vte\policy.2.8.vte-sharp.dll"
+                    Vital="no" />
+
+              <File Id="policy.2.8.vtesharp.config" Name="policy.2.8.config"
+                    CompanionFile="policy.2.8.vtesharp.dll"
+                    Source="source\lib\gtk-sharp-2.0\vte\policy.2.8.config" Vital="no" />
+            </Component>
           </Directory>
 
           <!-- Specifying Assembly=".net" causes the dll to be GACed but the

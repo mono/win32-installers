@@ -1,14 +1,28 @@
 2009-01-16  Cody Russell  <bratsche@gnome.org>
 
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/vte-sharp.dll
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/policy.2.4.vte-sharp.dll
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/policy.2.6.vte-sharp.dll
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/policy.2.4.config
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/policy.2.6.config
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/vte-sharp.dll.config
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/policy.2.8.vte-sharp.dll
+	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/policy.2.8.config
+	* modules/vte-sharp-lib/source/bin/vtesharpglue-2.dll
+	* modules/vte-sharp-lib/vte-sharp-lib.wxs: Updated vte# to that from
+	gnome-sharp 2.16.1.  Added 2.4 and 2.8 policy files, and fixed 2.6 policy files.
+
+2009-01-16  Cody Russell  <bratsche@gnome.org>
+
 	* sdk-en/SDK.wxs
-        * modules/vte-dev/sources/include/vte/pty.h
-        * modules/vte-dev/sources/include/vte/reaper.h
-        * modules/vte-dev/sources/include/vte/vte.h
-        * modules/vte-dev/sources/include/vte/vteaccess.h
+	* modules/vte-dev/sources/include/vte/pty.h
+	* modules/vte-dev/sources/include/vte/reaper.h
+	* modules/vte-dev/sources/include/vte/vte.h
+	* modules/vte-dev/sources/include/vte/vteaccess.h
 	* modules/vte-dev/sources/lib/pkgconfig/vte.pc
-        * modules/vte-dev/vte-dev.build
-        * modules/vte-dev/vte-dev.wxs: Add vte-dev merge module to
-        contain vte headers and pkgconfig file.
+	* modules/vte-dev/vte-dev.build
+	* modules/vte-dev/vte-dev.wxs: Add vte-dev merge module to
+	contain vte headers and pkgconfig file.
 
 2009-01-14  Cody Russell  <cody@jhu.edu>
 
