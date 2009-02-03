@@ -1,3 +1,12 @@
+2009-02-03  Mike Kestner  <mkestner@novell.com>
+
+	* modules/gtk+-2.0-lib/gtk+-2.0-lib.wxs: update custom action for
+	pixbuf-loader and immodule setup.  Use a new binary and run the
+	actions in-script with elevated permissions to avoid errors on vista.
+	* modules/gtk+-2.0-lib/source/bin/redirector.*: binary and source for
+	app which takes a command and a filename to redirect its output to.
+	* modules/gtk+-2.0-lib/source/bin/setup.vbs: kill
+
 2009-01-16  Cody Russell  <bratsche@gnome.org>
 
 	* modules/vte-sharp-lib/source/lib/gtk-sharp-2.0/vte/vte-sharp.dll

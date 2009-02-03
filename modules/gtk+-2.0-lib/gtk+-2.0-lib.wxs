@@ -3,11 +3,13 @@
   <Module Id="gtk__2_0_lib" Language="1033" Version="2.12.9">
     <Package Id="2ee2af11-dc29-11dc-b7b3-005056c00008" InstallerVersion="200" Manufacturer="Gtk+ Project"/>
 
-    <Binary Id="setup.vbs" SourceFile="source\bin\setup.vbs" />
-    <CustomAction Id="setup" BinaryKey="setup.vbs" VBScriptCall="Main"/>
-
+    <Binary Id="redirector.exe" SourceFile="source\bin\redirector.exe" />
+    <CustomAction Id="setup_pixbuf_loaders" BinaryKey="redirector.exe" Execute="deferred" Impersonate="no" ExeCommand="&quot;[MergeRedirectFolder]bin\gdk-pixbuf-query-loaders.exe&quot; &quot;[MergeRedirectFolder]etc\gtk-2.0\gdk-pixbuf.loaders"/>
+    <CustomAction Id="setup_immodules" BinaryKey="redirector.exe" Execute="deferred" Impersonate="no" ExeCommand="&quot;[MergeRedirectFolder]bin\gtk-query-immodules-2.0.exe&quot; &quot;[MergeRedirectFolder]etc\gtk-2.0\gtk.immodules"/>
+ 
     <InstallExecuteSequence>
-      <Custom Action="setup" After="InstallFinalize">Not Installed</Custom>
+      <Custom Action="setup_pixbuf_loaders" Before="InstallFinalize">Not Installed</Custom>
+      <Custom Action="setup_immodules" Before="InstallFinalize">Not Installed</Custom>
     </InstallExecuteSequence>
 
     <Directory Id="TARGETDIR" Name="SourceDir">
