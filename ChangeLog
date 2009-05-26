@@ -1,3 +1,9 @@
+2009-05-26  Mike Kestner  <mkestner@novell.com>
+
+	* modules/mono-cairo-lib/mono-cairo-lib.wxs: a little rework of the
+	directory naming for the installed libraries.
+	* modules/mono-posix-lib/*: initial version of a Mono.Posix msm.
+
 2009-02-03  Mike Kestner  <mkestner@novell.com>
 
 	* modules/gtk+-2.0-lib/gtk+-2.0-lib.wxs: update custom action for

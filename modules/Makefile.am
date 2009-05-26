@@ -6,6 +6,7 @@ SUBDIRS = \
 	gtk+-2.0-lib/ \
 	mono-cairo-dev/ \
 	mono-cairo-lib/ \
+	mono-posix-lib/ \
 	poppler-lib/ \
 	vte-lib/ \
 	vte-sharp-dev/ \

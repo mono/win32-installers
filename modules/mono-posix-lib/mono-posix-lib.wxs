@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <Module Id="mono_posix_lib" Language="1033" Version="1.0.5000.0">
+    <Package Id="66B46D3B-1B0F-4ce0-8D8B-C225AF3B2D36" Manufacturer="Mono Project"
+             InstallerVersion="200" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="MergeRedirectFolder">
+        <Directory Id="bin" Name="bin">
+          <Component Id="monoposixhelper_inst" Guid="367274e3-83ed-4f4b-800f-b44f054d67a0">
+            <File Id="monoposixhelperdll" Name="MonoPosixHelper.dll" Source="source/bin/MonoPosixHelper.dll" KeyPath="yes" Vital="yes" />
+          </Component>
+        </Directory>
+        <Directory Id="gac">
+	  <!-- not an explicit directory, Assembly=".net" GACs the assemblies -->
+          <Component Id="MonoPosix_gac" Guid="c7f75a65-89c6-4f0f-b9fc-db52fc2587b4">
+            <File Id="MonoPosixdll" Name="Mono.Posix.dll" Assembly=".net" KeyPath="yes" Source="source\lib\Mono.Posix.dll" Vital="yes" />
+          </Component>
+        </Directory>
+        <Directory Id="lib" Name="lib">
+          <Directory Id="MonoPosix" Name="Mono.Posix">
+	    <!-- Installs GACd assemblies to an addressable location - see http://blogs.msdn.com/astebner/archive/2007/06/21/3450539.aspx -->
+            <Component Id="instassembly" Guid="f846a63c-d97a-4b30-ab27-d2bd4ac1e8b3">
+              <File Id="MonoPosixdll_inst" Name="Mono.Posix.dll" Source="source\lib\Mono.Posix.dll" Vital="yes" />
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Module>
+</Wix>

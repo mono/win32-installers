@@ -7,7 +7,7 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="MergeRedirectFolder">
-        <Directory Id="lib" Name="lib">
+        <Directory Id="lib1" Name="lib1">
           <!-- The following is not a real directory - it is created only for
 	       the purposes of GACing assemblies, and will never be created on
                a host system -->
@@ -31,7 +31,7 @@
           </Directory>
           
         </Directory>
-        <Directory Id="lib2" Name="lib2">
+        <Directory Id="lib" Name="lib">
           <Directory Id="GAC2">
             <!--<Directory Id="monocairo20" Name="Mono.Cairo">-->
               <Component Id="monocairo20_dll" Guid="310fffcc-8520-11dd-bea1-001a92982a42">

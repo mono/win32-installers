@@ -29,6 +29,7 @@ modules/gtk+-2.0-dev/Makefile
 modules/gtk+-2.0-lib/Makefile
 modules/mono-cairo-dev/Makefile
 modules/mono-cairo-lib/Makefile
+modules/mono-posix-lib/Makefile
 modules/poppler-lib/Makefile
 modules/vte-lib/Makefile
 modules/vte-sharp-dev/Makefile
