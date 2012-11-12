@@ -15,6 +15,7 @@
               <File Id="policy.2.0.config" Name="policy.2.0.config" CompanionFile="policy.2.0.Mono.Cairo.dll" Source="source\lib\2.0\policy.2.0.config" Vital="no" />
             </Component>
           </Directory>
+        </Directory>
 
         <Directory Id="lib4" Name="lib4">
           <!-- The following is not a real directory - it is created only for
