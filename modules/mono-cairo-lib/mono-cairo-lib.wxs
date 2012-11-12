@@ -7,16 +7,6 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="MergeRedirectFolder">
-
-        <Directory Id="lib2" Name="lib2">
-          <Directory Id="monocairo20dir" Name="Mono.Cairo">
-            <Component Id="monocairo_policy.2.0" Guid="8b50cd69-23ef-4165-966a-e57d28e1ea6e">
-              <File Id="policy.2.0.Mono.Cairo.dll" Name="policy.2.0.Mono.Cairo.dll" KeyPath="yes" Assembly=".net" Source="source\lib\2.0\policy.2.0.Mono.Cairo.dll" Vital="no" />
-              <File Id="policy.2.0.config" Name="policy.2.0.config" CompanionFile="policy.2.0.Mono.Cairo.dll" Source="source\lib\2.0\policy.2.0.config" Vital="no" />
-            </Component>
-          </Directory>
-        </Directory>
-
         <Directory Id="lib4" Name="lib4">
           <!-- The following is not a real directory - it is created only for
 	       the purposes of GACing assemblies, and will never be created on
