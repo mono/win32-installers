@@ -7,50 +7,39 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="MergeRedirectFolder">
-        <Directory Id="lib1" Name="lib1">
+
+        <Directory Id="lib2" Name="lib2">
+          <Directory Id="monocairo20dir" Name="Mono.Cairo">
+            <Component Id="monocairo_policy.2.0" Guid="8b50cd69-23ef-4165-966a-e57d28e1ea6e">
+              <File Id="policy.2.0.Mono.Cairo.dll" Name="policy.2.0.Mono.Cairo.dll" KeyPath="yes" Assembly=".net" Source="source\lib\2.0\policy.2.0.Mono.Cairo.dll" Vital="no" />
+              <File Id="policy.2.0.config" Name="policy.2.0.config" CompanionFile="policy.2.0.Mono.Cairo.dll" Source="source\lib\2.0\policy.2.0.config" Vital="no" />
+            </Component>
+          </Directory>
+
+        <Directory Id="lib4" Name="lib4">
           <!-- The following is not a real directory - it is created only for
 	       the purposes of GACing assemblies, and will never be created on
                a host system -->
-          <Directory Id="GAC">
-            <!--<Directory Id="monocairo" Name="Mono.Cairo">-->
-              <Component Id="monocairo_dll" Guid="B444473C-C3C5-4700-8884-5B73E4AFE5B5">
-                <File Id="monocairodll" Name="Mono.Cairo.dll" Assembly=".net" KeyPath="yes"
-                      Source="source\lib\1.0\Mono.Cairo.dll" Vital="yes" />
-              </Component>
+          <Directory Id="GAC4">
+            <!--<Directory Id="monocairo40" Name="Mono.Cairo">-->
+            <Component Id="monocairo40_dll" Guid="805c65fb-1df8-453e-ba05-2047d844bfb3">
+              <File Id="monocairo40dll" Name="Mono.Cairo.dll" Assembly=".net" KeyPath="yes"
+                    Source="source\lib\4.0\Mono.Cairo.dll" Vital="yes" />
+            </Component>
             <!--</Directory>-->
           </Directory>
 
           <!-- Specifying Assembly=".net" causes the dll to be GACed but the
 	       file is never installed, so we must specify it again.  See
                http://blogs.msdn.com/astebner/archive/2007/06/21/3450539.aspx -->
-          <Directory Id="monocairodir" Name="Mono.Cairo">
-            <Component Id="monocairo_dll_inst" Guid="f5e55bd0-4ede-11dd-9af8-001a6bce76fb">
-              <File Id="monocairodll_inst" Name="Mono.Cairo.dll" KeyPath="yes"
-                    Source="source\lib\1.0\Mono.Cairo.dll" Vital="yes" />
+          <Directory Id="monocairo40dir" Name="Mono.Cairo">
+            <Component Id="monocairo40_dll_inst" Guid="e028bf1c-8d89-4b72-8111-946bba04e643">
+              <File Id="monocairo40dll_inst" Name="Mono.Cairo.dll" KeyPath="yes"
+                    Source="source\lib\4.0\Mono.Cairo.dll" Vital="yes" />
             </Component>
           </Directory>
-          
-        </Directory>
-        <Directory Id="lib" Name="lib">
-          <Directory Id="GAC2">
-            <!--<Directory Id="monocairo20" Name="Mono.Cairo">-->
-              <Component Id="monocairo20_dll" Guid="310fffcc-8520-11dd-bea1-001a92982a42">
-                <File Id="monocairo20dll" Name="Mono.Cairo.dll" Assembly=".net" KeyPath="yes"
-                      Source="source\lib\2.0\Mono.Cairo.dll" Vital="yes" />
-              </Component>
-            <!--</Directory>-->
-          </Directory>
-
-          <Directory Id="monocairo20dir" Name="Mono.Cairo">
-            <Component Id="monocairo20_dll_inst" Guid="46b3dbe6-8520-11dd-bea1-001a92982a42">
-              <File Id="monocairo20dll_inst" Name="Mono.Cairo.dll" KeyPath="yes"
-                    Source="source\lib\2.0\Mono.Cairo.dll" Vital="yes" />
-            </Component>
-          </Directory>
-
         </Directory>
       </Directory>
     </Directory>
-
   </Module>
 </Wix>
