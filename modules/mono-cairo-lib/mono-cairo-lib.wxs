@@ -7,7 +7,7 @@
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="MergeRedirectFolder">
-        <Directory Id="lib4" Name="lib4">
+        <Directory Id="lib" Name="lib">
           <!-- The following is not a real directory - it is created only for
 	       the purposes of GACing assemblies, and will never be created on
                a host system -->
